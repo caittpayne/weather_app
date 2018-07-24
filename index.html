@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <html lang="en">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <title>Weather App</title>
+</head>
+<body class="default">
+<header><h1>local weather</h1></header>
+<div class="flex-container" id="buttonSection">
+  <section class = "weatherButton">
+    <h2>Find Your Local Weather Forecast</h2>
+    <section id="font-awesome"><i class="fas fa-angle-double-down fa-2x"></i></section>
+    <button id="localWeather" onclick="getLocation()">GET WEATHER</button>
+  </section>
+</div>
+ <div class="flex-container" id= "showWeather">
+    <div class="flex-container">
+      <section class="item temp"><h2 id="imperial"> <img class="tempIcon" src="assets/imperial.png"></h2></section>
+      <section class="item"><img id="icon" src=""></section>
+      <section class="item temp"><h2 id="celsius"> <img class="tempIcon" src="assets/metric.png"></h2></section>
+    </div>
+    <div class="flex-container">
+      <section class="item"><h3 id='city'></h3><hr><h3 id="description"></h3></section>
+    </div>
+    <div class="flex-container">
+      <section class="item" id="leftBorder"><h3 id="humidity">% </h3><p>HUMIDITY</p></section>
+      <section class="item"><h3 id="tempMin"> <img class="tempIconSmall" src="assets/imperial.png"></h3><p>MIN TEMP</p></section>
+      <section class="item" id="rightBorder"><h3 id="tempMax"> <img class="tempIconSmall" src="assets/imperial.png"></h3><p>MAX TEMP</p></section>
+    </div>
+    <footer></footer>
+  </div>
+<script src="config.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>

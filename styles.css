@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Sacramento');
+
+.default {
+  background-color: #9CD0DD;
+}
+
+.weatherButton {
+  align-content: center;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+
+header {
+  font-family: 'Sacramento', cursive;
+  color: white;
+  font-size: 1.5em;
+}
+
+#buttonSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 400px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.item {
+  text-align: center;
+  align-self: center;
+  margin: 5px;
+  padding: 15px;
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+}
+
+.temp {
+  font-size: 3em;
+}
+
+#icon {
+  width: 300px;
+  height: 300px;
+}
+
+.day {
+  background-color: #E5C852;
+}
+
+.night {
+  background-color: #475881;
+}
+
+.cloud_rain {
+  background-color: #2A99B7;
+}
+
+.tempIcon {
+  width: 70px;
+  height: auto;
+}
+
+.tempIconSmall {
+  width: 20px;
+  height: auto;
+}
+
+#leftBorder {
+  position: relative;
+}
+
+#leftBorder::after {
+  content:"";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  right: 0px;
+  border-left: 1px solid;
+}
+
+#rightBorder {
+  position: relative;
+}
+
+#rightBorder::after {
+  content:"";
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 0px;
+  border-right: 1px solid;
+}
+
+button {
+  background-color: #006064;
+  border: none;
+  width: 400px;
+  height: 50px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  color: white;
+}
+
+button:hover {
+  background-color: #226C70;
+}
+
+#font-awesome {
+  margin: 0px 0px 20px 0px;
+  color: white;
+}
