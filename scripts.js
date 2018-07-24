@@ -14,7 +14,6 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    console.log(lat, lon);
     getWeather(lat, lon);
     hideButton();
     })
@@ -96,8 +95,16 @@ function getWeather(lat, lon) {
 }
 
 // Change weather icon
- function icon(id) {
+ function icon(id, currentTime, sunset) {
    switch(true) {
+     case (currentTime > sunset && (id >= 801 && id <= 802)):
+        var image = document.getElementById('icon');
+        image.src = 'assets/part_cloud_night.png'
+        break;
+     case (currentTime > sunset && (id = 800)):
+        var image = document.getElementById('icon');
+        image.src = 'assets/night.png'
+        break;
      case (id >= 200 && id <= 232):
         var image = document.getElementById('icon');
         image.src = 'assets/thunderstorm.png'
@@ -126,10 +133,6 @@ function getWeather(lat, lon) {
            var image = document.getElementById('icon');
            image.src = 'assets/cloud.png'
            break;
-    /* case:
-        var image = document.getElementById('icon';)
-        image.src = 'assets/part_cloud_night'
-        break; */
    }
 }
 
@@ -137,16 +140,16 @@ function getWeather(lat, lon) {
  function background(id, currentTime, sunrise, sunset) {
   var body = document.getElementsByClassName('default');
   switch(true) {
-    case (currentTime > sunrise && (id >= 801 && id <= 804)):
+    case ((currentTime > sunrise && currentTime < sunset) && (id >= 801 && id <= 804)):
        document.body.classList.add('cloud_rain');
        break;
-    case (currentTime > sunrise && (id >= 200 && id <= 531)):
+    case ((currentTime > sunrise && currentTime < sunset) && (id >= 200 && id <= 531)):
           document.body.classList.add('cloud_rain');
           break;
-    case (currentTime > sunrise && (id >= 700 && id <= 781)):
+    case ((currentTime > sunrise && currentTime < sunset) && (id >= 700 && id <= 781)):
           document.body.classList.add('day');
           break;
-    case (currentTime > sunset):
+    case (currentTime > sunrise && currentTime < sunset):
           document.body.classList.add('day');
           break;
     case (currentTime > sunset):
